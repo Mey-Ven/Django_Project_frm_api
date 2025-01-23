@@ -1,0 +1,9 @@
+{% extends 'materials/base.html' %}
+
+{% block title %}Confirmation de commande{% endblock %}
+
+{% block content %}
+<h1>Commande confirmée</h1>
+<p>Votre commande pour le matériau <strong>{{ material.name }}</strong> a été passée avec succès.</p>
+<a href="{% url 'material_list' %}">Retour à la liste des matériaux</a>
+{% endblock %}

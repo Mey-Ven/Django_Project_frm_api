@@ -1,0 +1,16 @@
+{% extends 'materials/base.html' %}
+
+{% block title %}Passer une commande{% endblock %}
+
+{% block content %}
+<h1>Passer une commande</h1>
+{% if error %}
+    <p style="color: red;">{{ error }}</p>
+{% endif %}
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Commander</button>
+</form>
+<a href="{% url 'material_list' %}">Retour à la liste des matériaux</a>
+{% endblock %}

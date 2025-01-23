@@ -1,0 +1,9 @@
+{% extends 'materials/base.html' %}
+
+{% block title %}Commande impossible{% endblock %}
+
+{% block content %}
+<h1>Commande impossible</h1>
+<p>Le matériau {{ material.name }} est actuellement en rupture de stock.</p>
+<a href="{% url 'material_list' %}">Retour à la liste des matériaux</a>
+{% endblock %}

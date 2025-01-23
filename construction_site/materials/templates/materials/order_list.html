@@ -1,0 +1,15 @@
+{% extends 'materials/base.html' %}
+
+{% block title %}Mes Commandes{% endblock %}
+
+{% block content %}
+<h1>Vos Commandes</h1>
+<ul>
+    {% for order in orders %}
+        <li>
+            Matériau : {{ order.material.name }} <br>
+            Date : {{ order.ordered_at }}
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

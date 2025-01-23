@@ -1,0 +1,30 @@
+{% extends 'materials/base.html' %}
+
+{% block title %}Materials{% endblock %}
+
+{% block content %}
+<h2>Materials</h2>
+<form method="post">
+    {% csrf_token %}
+    <table>
+        <thead>
+            <tr>
+                <th>Material</th>
+                <th>Quantity</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for material in materials %}
+            <tr>
+                <td>{{ material.name }}</td>
+                <td>
+                    <input type="number" name="quantity_{{ material.id }}" min="0" max="{{ material.quantity }}" value="0">
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <button type="submit">Passer la commande</button>
+</form>
+<a href="{% url 'order_list' %}">Voir mes commandes</a>
+{% endblock %}
